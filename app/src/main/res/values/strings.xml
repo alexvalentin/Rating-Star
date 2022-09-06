@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Rating Star</string>
+    <string name="clickButton">Give a rate</string>
+    <string name="titleTVText">Rate our Rating Star application</string>
+    <string name="resetBtn">Reset Rating</string>
+    <string name="ratingTVText">Your rating score will be displayed here.</string>
+    <string name="given1starText">Your given rating is 1 star!"</string>
+    <string name="given2starsText">Your given rating is 2 stars!"</string>
+    <string name="given3starsText">Your given rating is 3 stars!"</string>
+    <string name="given4starsText">Your given rating is 4 stars!"</string>
+    <string name="given5starsText">Your given rating is 5 stars!"</string>
+    <string name="afterResetText">You have reset the score. Rate again!"</string>
 </resources>
