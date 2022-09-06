@@ -1,7 +1,6 @@
 package com.example.ratingstar;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RatingBar;
@@ -19,55 +18,59 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        listenerForRatingBar();
-        onButtonClickListener();
+        clickOnRatingBar();
+        onGivingRateButton();
+        onResetRateButton();
     }
 
-    public void listenerForRatingBar() {
+    public void clickOnRatingBar() {
         binding.ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean b) {
 
                 if (rating == 1.0) {
-                    binding.textView.setText("Your rating is only: " + String.valueOf(rating)+ " star!");
-                }
+                    Toast.makeText(MainActivity.this, "You have selected "
+                            + binding.ratingBar.getRating() + " star!", Toast.LENGTH_SHORT).show();
+                } else if (rating >= 2.0 && rating <= 3.0) {
+                    Toast.makeText(MainActivity.this, "You have selected "
+                            + binding.ratingBar.getRating() + " stars!", Toast.LENGTH_SHORT).show();
 
-                if (rating >= 2.0 && rating <=3.0) {
-                    binding.textView.setText("You collect " + String.valueOf(rating)+ " stars. Nice try!");
-                }
-
-                if (rating == 4) {
-                    binding.textView.setText("You are cool! You bring " + String.valueOf(rating)+ " stars!");
-                }
-
-                if (rating == 5.0) {
-                    binding.textView.setText("Well, " + String.valueOf(rating)+ " stars. \n Someone won the jackpot! ");
+                } else if (rating == 4) {
+                    Toast.makeText(MainActivity.this, "You have selected "
+                            + binding.ratingBar.getRating() + " stars!", Toast.LENGTH_SHORT).show();
+                } else if (rating == 5.0) {
+                    Toast.makeText(MainActivity.this, "You have selected "
+                            + binding.ratingBar.getRating() + " stars!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
-    public void onButtonClickListener() {
-        binding.button.setOnClickListener(new View.OnClickListener() {
+    public void onGivingRateButton() {
+        binding.givingRateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 if (binding.ratingBar.getRating() == 1) {
-                    Toast.makeText(MainActivity.this, "You have received " + String.valueOf(binding.ratingBar.getRating())+ " star, oh no!", Toast.LENGTH_SHORT).show();
+                    binding.ratingTV.setText(R.string.given1starText);
+                } else if (binding.ratingBar.getRating() == 2) {
+                    binding.ratingTV.setText(R.string.given2starsText);
+                } else if (binding.ratingBar.getRating() == 3) {
+                    binding.ratingTV.setText(R.string.given3starsText);
+                } else if (binding.ratingBar.getRating() == 4) {
+                    binding.ratingTV.setText(R.string.given4starsText);
+                } else if (binding.ratingBar.getRating() == 5) {
+                    binding.ratingTV.setText(R.string.given5starsText);
                 }
-                /*else
-                    Toast.makeText(MainActivity.this, "You have received " + String.valueOf(ratingBar.getRating())+ " stars, good", Toast.LENGTH_SHORT).show(); */
+            }
+        });
+    }
 
-                if (binding.ratingBar.getRating() >= 2 && binding.ratingBar.getRating() <= 3) {
-                    Toast.makeText(MainActivity.this, "You have received " + String.valueOf(binding.ratingBar.getRating())+ " stars. You progress!", Toast.LENGTH_SHORT).show();
-                }
-
-                if (binding.ratingBar.getRating() == 4) {
-                    Toast.makeText(MainActivity.this, "You have received " + String.valueOf(binding.ratingBar.getRating())+ " stars. Very well!", Toast.LENGTH_SHORT).show();
-                }
-
-                if (binding.ratingBar.getRating() == 5) {
-                    Toast.makeText(MainActivity.this, "Congrats, buddy. You have " + binding.ratingBar.getRating() + " stars!", Toast.LENGTH_SHORT).show();}
+    public void onResetRateButton() {
+        binding.resetRatingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                binding.ratingTV.setText(R.string.afterResetText);
+                binding.ratingBar.setRating(0);
             }
         });
     }
