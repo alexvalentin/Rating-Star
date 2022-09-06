@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Rating Star</string>
+    <string name="clickButton">Give a rate</string>
 </resources>
