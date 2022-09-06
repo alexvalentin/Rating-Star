@@ -1,2 +1,2 @@
 # Rating-Star
-A mini-app using rating star bar
+A mini-app using rating star bar using Java
