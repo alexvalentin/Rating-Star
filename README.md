@@ -6,10 +6,10 @@ A sample Rating Star application which implies a rating bar and two buttons for 
 Please ⭐️ this repository!
 
 ### Screenshots
-Start the game | Head point
+Start the Rating Star application| Start the Rating Star application
 :------------------:|:------------------------:
 ![image](https://user-images.githubusercontent.com/67371383/196049803-e30e2337-6117-416b-a23e-5a1fd4050a11.png)| ![image](https://user-images.githubusercontent.com/67371383/196049891-de122079-3242-416e-836d-f60a33a8038c.png) |!
 
-Tail point| Counter of the points
+Give a 5 rating star| Reset your rating
 :------------------:|:------------------------:
 ![image](https://user-images.githubusercontent.com/67371383/196049901-b227c17f-e41a-4e86-ac8b-af4f4e96e647.png) | ![image](https://user-images.githubusercontent.com/67371383/196049914-c2f27093-4efb-42fa-b6a8-d24a7eb30359.png) |!
